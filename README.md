@@ -1,2 +1,1 @@
-# euro2016
-Javascript-Projekt für Euro2016
+Dieses README.md File enthält die Dokumentation für Euro2016.

@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './pages/App';
 import List from './pages/List';
@@ -8,10 +8,10 @@ import User from './pages/User';
 
 
 const routes = (
-      <Route path="/" component={ App } >
+<Route path="/" component={ App } >
         <IndexRoute component={ List } />
-        <Route path="/groups" component={Groups}/>
-        <Route path="/user" component={User}/>
+        <Route path="/groups" component={Groups} />
+        <Route path="/user" component={User} />
       </Route>
 );
 

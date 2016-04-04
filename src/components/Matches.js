@@ -6,27 +6,40 @@ import _ from 'underscore';
 
 class Matches extends React.Component {
 
-/*
-  propTypes: {
-    teams: React.PropTypes.arrayOf(React.PropTypes.string)
-  }*/
+  /*
+    propTypes: {
+      teams: React.PropTypes.arrayOf(React.PropTypes.string)
+    }*/
 
-
-  render() {
-    let rows = [];
-    let nr = 0;
-    for( var i=0; i< this.props.teams.length; i++) {
-      for ( var j=i+1; j< this.props.teams.length; j++) {
-        nr = nr + 1;
-        //rows.push(this.props.teams[i] + " - " + this.props.teams[j]);
-        rows.push(<Match team1={this.props.teams[i]} team2={this.props.teams[j]} nr={nr}/>);
-      }
+    onChange(nr, team1, value1, team2, value2) {
+      console.log('onChange: (' + nr + ') ' + team1 + ' - ' + team2 + ' <' + value1 + '> - <' + value2 + '>');
     }
-    return(
+
+  	render() {
+    	let rows = [];
+    	let nr = 0;
+
+    /* Runde 1 */
+    	rows.push(<Match team1={this.props.teams[0]} team2={this.props.teams[1]} onChange={this.onChange} nr={nr} />);
+    	nr = nr + 1;
+    	rows.push(<Match team1={this.props.teams[2]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} />);
+    	nr = nr + 1;
+    /* Runde 2 */
+    	rows.push(<Match team1={this.props.teams[1]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} />);
+    	nr = nr + 1;
+    	rows.push(<Match team1={this.props.teams[0]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} />);
+    	nr = nr + 1;
+    /* Runde 3 */
+    	rows.push(<Match team1={this.props.teams[3]} team2={this.props.teams[0]} onChange={this.onChange}  nr={nr} />);
+    	nr = nr + 1;
+    	rows.push(<Match team1={this.props.teams[1]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} />);
+    	nr = nr + 1;
+
+    	return (
       <div>
         <h1>{rows}</h1>
       </div>
-    );
+      );
   }
 }
 

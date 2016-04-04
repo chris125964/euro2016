@@ -4,25 +4,23 @@ import constants from '../constants';
 
 class Groups extends React.Component {
 
-  render() {
+  	render() {
 
-    return (
+    	return (
       <div>
         <ul>
           {_.map(constants.groups,
-             (group, index) =>
-             <div>
+        (group, index) => <div>
               <li>{group.nummer}</li>
               <ul>
-              {_.map(group.teams, (team) =>
-                <li>{team}</li>
-              )}
+              {_.map(group.teams, (team) => <li>{team}</li>
+          )}
               </ul>
               </div>
-        )}
+      )}
         </ul>
        </div>
-    )
+    );
   }
 }
 export default Groups;

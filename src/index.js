@@ -6,11 +6,11 @@ import { createHashHistory } from 'history';
 import routes from './routes';
 
 const appHistory = useRouterHistory(createHashHistory)({
-  queryKey: false
-})
+  	queryKey: false
+});
 
 ReactDOM.render(
-  //console.log('index # render');
+  // console.log('index # render');
   <Router history={appHistory} onUpdate={() => window.scrollTo(0, 0)}>
       {routes}
   </Router>,

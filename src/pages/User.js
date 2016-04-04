@@ -4,20 +4,19 @@ import constants from '../constants';
 
 class User extends React.Component {
 
-  render() {
+  	render() {
 
-    return (
+    	return (
       <div>
         <ul>
           {_.map(constants.users,
-             (user, index) =>
-             <div>
+        (user, index) => <div>
               <li>{user.name}</li>
               </div>
-        )}
+      )}
         </ul>
        </div>
-    )
+    );
   }
 }
 export default User;

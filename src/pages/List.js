@@ -17,6 +17,10 @@ class List extends React.Component {
       };
     }
 
+    onChangeMatch(group, nr, team1, value1, team2, value2) {
+      console.log('onChangeMatch: ' + this.state.groups[group].nummer + '.' + nr + ') ' + team1 + ' - ' + team2 + ': ' + value1 + ' - ' + value2);
+    //  console.log('onChangeMatch # team1: ' + team1 + ' -> ' + JSON.stringify(this.state.groups[0]., null, 4));
+    }
   	render() {
     	return (
       <div>
@@ -26,16 +30,17 @@ class List extends React.Component {
         </ul>
         <Row>
           <Tabs defaultActiveKey={1}>
-            { _.map(constants.groups, (group, index) => <Tab eventKey={index} title={'Gruppe ' + constants.groups[index].nummer}>
-              <Col md={6}>
-              <Matches teams={constants.groups[index].teams} />
-              </Col>
-              <Col md={6}>
-                <MatchTabelle teams={constants.groups[index].teams} />
-              </Col>
-              </Tab>
-      )
-      }
+            { _.map(constants.groups, (group, index) =>
+                <Tab eventKey={index} title={'Gruppe ' + group.nummer} key={index}>
+                  <Col md={6}>
+                  <Matches group={index} teams={this.state.groups[index].teams} onChange={this.onChangeMatch.bind(this)}/>
+                  </Col>
+                  <Col md={6}>
+                    <MatchTabelle teams={this.state.groups[index].teams} />
+                  </Col>
+                </Tab>
+              )
+            }
           </Tabs>
         </Row>
        </div>

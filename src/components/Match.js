@@ -25,14 +25,14 @@ class Match extends React.Component {
     	this.setState({
       	value1: value
       });
-      this.props.onChange(this.props.nr, this.props.team1, value, this.props.team2, this.state.value2);
+      this.props.onChange(this.props.group, this.props.nr, this.props.team1, value, this.props.team2, this.state.value2);
     }
     handleChange2() {
       let value = this.refs.input2.getValue();
     	this.setState({
       	value2: value
       });
-      this.props.onChange(this.props.nr, this.props.team1, this.state.value1, this.props.team2, value);
+      this.props.onChange(this.props.group, this.props.nr, this.props.team1, this.state.value1, this.props.team2, value);
     }
 
   	render() {

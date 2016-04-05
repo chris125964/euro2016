@@ -11,8 +11,8 @@ class Matches extends React.Component {
       teams: React.PropTypes.arrayOf(React.PropTypes.string)
     }*/
 
-    onChange(nr, team1, value1, team2, value2) {
-      console.log('onChange: (' + nr + ') ' + team1 + ' - ' + team2 + ' <' + value1 + '> - <' + value2 + '>');
+    onChange(group, nr, team1, value1, team2, value2) {
+      this.props.onChange(group, nr, team1, value1, team2, value2);
     }
 
   	render() {
@@ -20,19 +20,19 @@ class Matches extends React.Component {
     	let nr = 0;
 
     /* Runde 1 */
-    	rows.push(<Match team1={this.props.teams[0]} team2={this.props.teams[1]} onChange={this.onChange} nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[0]} team2={this.props.teams[1]} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match team1={this.props.teams[2]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[2]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} key={nr}/>);
     	nr = nr + 1;
     /* Runde 2 */
-    	rows.push(<Match team1={this.props.teams[1]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[1]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match team1={this.props.teams[0]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[0]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} key={nr}/>);
     	nr = nr + 1;
     /* Runde 3 */
-    	rows.push(<Match team1={this.props.teams[3]} team2={this.props.teams[0]} onChange={this.onChange}  nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[3]} team2={this.props.teams[0]} onChange={this.onChange}  nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match team1={this.props.teams[1]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} />);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[1]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} key={nr}/>);
     	nr = nr + 1;
 
     	return (

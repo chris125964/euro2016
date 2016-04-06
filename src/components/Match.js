@@ -11,34 +11,34 @@ class Match extends React.Component {
     }
     */
 
-  	constructor(props, context) {
-    	super(props, context);
+  constructor(props, context) {
+    super(props, context);
 
-    	this.state = {
-      	value1: '',
-        value2: ''
+    this.state = {
+      value1: '',
+      value2: ''
     };
   }
 
-  	handleChange1() {
-      let value = this.refs.input1.getValue();
-    	this.setState({
-      	value1: value
-      });
-      this.props.onChange(this.props.group, this.props.nr, this.props.team1, value, this.props.team2, this.state.value2);
-    }
-    handleChange2() {
-      let value = this.refs.input2.getValue();
-    	this.setState({
-      	value2: value
-      });
-      this.props.onChange(this.props.group, this.props.nr, this.props.team1, this.state.value1, this.props.team2, value);
-    }
+  handleChange1() {
+    let value = this.refs.input1.getValue();
+    this.setState({
+      value1: value
+    });
+    this.props.onChange(this.props.group, this.props.nr, this.props.team1, value, this.props.team2, this.state.value2);
+  }
+  handleChange2() {
+    let value = this.refs.input2.getValue();
+    this.setState({
+      value2: value
+    });
+    this.props.onChange(this.props.group, this.props.nr, this.props.team1, this.state.value1, this.props.team2, value);
+  }
 
-  	render() {
-    	let pic1 = this.props.team1 + '.gif';
-    	return (
-        <Row>
+  render() {
+    let pic1 = this.props.team1 + '.gif';
+    return (
+      <Row>
           <Col md={1}>
             {this.props.nr}
           </Col>

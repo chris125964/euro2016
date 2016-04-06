@@ -6,9 +6,11 @@ import _ from 'underscore';
 
 class MatchTabelle extends React.Component {
 
-  	render() {
-      let sortedGroup = _.sortBy(this.props.teams, (team) => {return -(team.punkte*100) - (team.torePlus-team.toreMinus)});
-    	return (
+  render() {
+    let sortedGroup = _.sortBy(this.props.teams, (team) => {
+      return -(team.punkte * 100) - (team.torePlus - team.toreMinus)
+    });
+    return (
       <div>
       <Table >
         <thead>

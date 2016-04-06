@@ -6,7 +6,7 @@ import { createHashHistory } from 'history';
 import routes from './routes';
 
 const appHistory = useRouterHistory(createHashHistory)({
-  	queryKey: false
+  queryKey: false
 });
 
 ReactDOM.render(

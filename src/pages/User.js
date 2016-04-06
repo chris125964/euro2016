@@ -4,9 +4,9 @@ import constants from '../constants';
 
 class User extends React.Component {
 
-  	render() {
+  render() {
 
-    	return (
+    return (
       <div>
         <ul>
           {_.map(constants.users,
@@ -16,7 +16,7 @@ class User extends React.Component {
       )}
         </ul>
        </div>
-    );
+      );
   }
 }
 export default User;

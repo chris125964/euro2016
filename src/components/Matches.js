@@ -35,10 +35,10 @@ class Matches extends React.Component {
     nr = nr + 1;
 
     return (
-    <div>
+      <div>
       <h1>{rows}</h1>
     </div>
-    );
+      );
   }
 }
 

@@ -4,9 +4,9 @@ import constants from '../constants';
 
 class Groups extends React.Component {
 
-  	render() {
+  render() {
 
-    	return (
+    return (
       <div>
         <ul>
           {_.map(constants.groups,
@@ -20,7 +20,7 @@ class Groups extends React.Component {
       )}
         </ul>
        </div>
-    );
+      );
   }
 }
 export default Groups;

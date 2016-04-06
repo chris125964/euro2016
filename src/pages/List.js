@@ -17,33 +17,33 @@ class List extends React.Component {
         games: [{
           team1: 0,
           team2: 1,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         } , {
           team1: 2,
           team2: 3,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         } , {
           team1: 1,
           team2: 3,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         } , {
           team1: 0,
           team2: 2,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         } , {
           team1: 3,
           team2: 0,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         } , {
           team1: 1,
           team2: 2,
-          tore1: -1,
-          tore2: -1
+          tore1: '',
+          tore2: ''
         }]
       };
     }
@@ -53,25 +53,32 @@ class List extends React.Component {
       let games = _.extend({}, this.state.games);
       games[nr].tore1 = value1;
       games[nr].tore2 = value2;
-      console.log('onChangeMatch: ' + groups[group].nummer + '.' + nr + ') ' + team1 + ' - ' + team2 + ': ' + value1 + ' - ' + value2);
       let indexTeam1 = _.find(groups[group].teams, (team) => {return team.name === team1})
       let indexTeam2 = _.find(groups[group].teams, (team) => {return team.name === team2})
-      console.log('indexTeam1: ' + JSON.stringify(indexTeam1, null, 4));
-      console.log('indexTeam2: ' + JSON.stringify(indexTeam2, null, 4));
-      console.log('games: ' + JSON.stringify(games, null, 4));
       _.map(groups, (group) => {
         _.map(group.teams, (team) => {
           team.punkte = 0;
+          team.torePlus = 0;
+          team.toreMinus = 0;
         });
       });
-      _.map(games, (game) => {if (game.tore1 > game.tore2) {
-          groups[group].teams[game.team1].punkte += 3;
-        } else if (game.tore1 < game.tore2) {
-          groups[group].teams[game.team2].punkte += 3;
-        } else {
-          groups[group].teams[game.team1].punkte += 1;
-          groups[group].teams[game.team2].punkte += 1;
-        };
+      _.map(games, (game) => {
+        let tore1 = parseInt(game.tore1);
+        let tore2 = parseInt(game.tore2);
+        if ((!_.isNaN(tore1)) && (!_.isNaN(tore2))) {
+          if (tore1 > tore2) {
+            groups[group].teams[game.team1].punkte += 3;
+          } else if (tore1 < tore2) {
+            groups[group].teams[game.team2].punkte += 3;
+          } else {
+            groups[group].teams[game.team1].punkte += 1;
+            groups[group].teams[game.team2].punkte += 1;
+          }
+          groups[group].teams[game.team1].torePlus += tore1;
+          groups[group].teams[game.team1].toreMinus += tore2;
+          groups[group].teams[game.team2].torePlus += tore2;
+          groups[group].teams[game.team2].toreMinus += tore1;
+        }
       })
       this.setState({groups});
     //  console.log('onChangeMatch # team1: ' + team1 + ' -> ' + JSON.stringify(this.state.groups[0]., null, 4));

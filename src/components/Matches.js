@@ -6,12 +6,16 @@ import _ from 'underscore';
 
 class Matches extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
   /*
     propTypes: {
       teams: React.PropTypes.arrayOf(React.PropTypes.string)
     }*/
 
     onChange(group, nr, team1, value1, team2, value2) {
+      console.log('Matches # onChange # group: ' + group);
       this.props.onChange(group, nr, team1, value1, team2, value2);
     }
 
@@ -20,19 +24,19 @@ class Matches extends React.Component {
     	let nr = 0;
 
     /* Runde 1 */
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[0]} team2={this.props.teams[1]} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[0].name} team2={this.props.teams[1].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[2]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[2].name} team2={this.props.teams[3].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
     /* Runde 2 */
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[1]} team2={this.props.teams[3]} onChange={this.onChange}  nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[1].name} team2={this.props.teams[3].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[0]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[0].name} team2={this.props.teams[2].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
     /* Runde 3 */
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[3]} team2={this.props.teams[0]} onChange={this.onChange}  nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[3].name} team2={this.props.teams[0].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
-    	rows.push(<Match group={this.props.group} team1={this.props.teams[1]} team2={this.props.teams[2]} onChange={this.onChange}  nr={nr} key={nr}/>);
+    	rows.push(<Match group={this.props.group} team1={this.props.teams[1].name} team2={this.props.teams[2].name} onChange={this.onChange.bind(this)} nr={nr} key={nr}/>);
     	nr = nr + 1;
 
     	return (

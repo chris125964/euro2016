@@ -38,24 +38,24 @@ class Match extends React.Component {
   	render() {
     	let pic1 = this.props.team1 + '.gif';
     	return (
-      <Row>
-        <Col md={1}>
-          {this.props.nr}
-        </Col>
-        <Col md={3}>
-      <Input type="text" bsSize="small" value={this.props.team1} disabled />
-      </Col>
-      <Col md={3}>
-      <Input type="text" bsSize="small" value={this.props.team2} disabled />
-      </Col>
-      <Col md={2}>
-        <Input type="text" value={this.state.value1} ref="input1" onChange={this.handleChange1.bind(this)} />
-      </Col>
-      <Col md={1}>-</Col>
-      <Col md={2}>
-        <Input type="text" value={this.state.value2} ref="input2" onChange={this.handleChange2.bind(this)}/>
-      </Col>
-      </Row>
+        <Row>
+          <Col md={1}>
+            {this.props.nr}
+          </Col>
+          <Col md={3}>
+            <Input type="text" bsSize="small" value={this.props.team1} disabled />
+          </Col>
+          <Col md={3}>
+            <Input type="text" bsSize="small" value={this.props.team2} disabled />
+          </Col>
+          <Col md={2}>
+            <Input type="text" value={this.state.value1} ref="input1" onChange={this.handleChange1.bind(this)} />
+          </Col>
+          <Col md={1}>-</Col>
+          <Col md={2}>
+            <Input type="text" value={this.state.value2} ref="input2" onChange={this.handleChange2.bind(this)}/>
+          </Col>
+        </Row>
       );
   }
 }

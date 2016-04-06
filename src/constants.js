@@ -2,21 +2,35 @@ export default {
 
   	groups: [{
     	nummer: 'A',
-    	teams: [
-      	'Frankreich',
-      	'Rumänien',
-      	'Albanien',
-      	'Schweiz'
-    ]
-  }, {
+    	teams: [{
+      	name: 'Frankreich',
+        punkte: 0
+      }, {
+      	name: 'Rumänien',
+        punkte: 0
+      } , {
+      	name: 'Albanien',
+        punkte: 0
+      } , {
+      	name: 'Schweiz',
+        punkte: 0
+      }]
+    } , {
     	nummer: 'B',
-    	teams: [
-      	'England',
-      	'Russland',
-      	'Wales',
-      	'Slowakei'
-    ]
-  }, {
+    	teams: [{
+      	name: 'England',
+        punkte: 0
+      } , {
+      	name: 'Russland',
+        punkte: 0
+      } , {
+      	name: 'Wales',
+        punkte: 0
+      } , {
+      	name: 'Slowakei',
+        punkte: 0
+      }]
+    } /*, {
     	nummer: 'C',
     	teams: [
       	'Deutschland',
@@ -48,7 +62,7 @@ export default {
       	'Österreich',
       	'Ungarn'
     ]
-  }
+  }*/
   ],
 
   	users: [{

@@ -21,8 +21,8 @@ class MatchTabelle extends React.Component {
         <tbody>
           { _.map(this.props.teams, (team, index) => <tr key={index}>
               <td>{index + 1}</td>
-              <td>{team}</td>
-              <td>punkte</td>
+              <td>{team.name}</td>
+              <td>{team.punkte}</td>
               <td>tore</td>
             </tr>
       ) }

@@ -3,14 +3,6 @@ import { Col, Image, Input, Row } from 'react-bootstrap';
 
 class Match extends React.Component {
 
-  /*
-    propTypes: {
-      nr: React.PropTypes.number,
-      team1: React.PropTypes.string.isRequired,
-      team2: React.PropTypes.string.isRequired
-    }
-    */
-
   constructor(props, context) {
     super(props, context);
 

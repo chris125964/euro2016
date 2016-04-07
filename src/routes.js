@@ -5,6 +5,7 @@ import App from './pages/App';
 import List from './pages/List';
 import Groups from './pages/Groups';
 import User from './pages/User';
+import Tables from './pages/Tables';
 
 
 const routes = (
@@ -12,6 +13,7 @@ const routes = (
         <IndexRoute component={ List } />
         <Route path="/groups" component={Groups} />
         <Route path="/user" component={User} />
+        <Route path="/tables" component={Tables} />
       </Route>
 );
 

@@ -22,8 +22,7 @@ class MatchTabelle extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { _.map(sortedGroup, (team, index) =>
-             <tr key={index}>
+          { _.map(sortedGroup, (team, index) => <tr key={index}>
               <td>{index + 1}</td>
               <td>{team.name}</td>
               <td>{team.punkte}</td>

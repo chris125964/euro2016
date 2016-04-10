@@ -89,7 +89,7 @@ class Tables extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <Row>
         <Tabs defaultActiveKey={1}>
           { _.map(constants.groups, (group, index) => <Tab eventKey={index} title={'Gruppe ' + group.nummer} key={index}>
@@ -100,8 +100,8 @@ class Tables extends React.Component {
                   <MatchTabelle teams={this.state.groups[index].teams}/>
                 </Col>
               </Tab>
-            )
-          }
+      )
+      }
         </Tabs>
       </Row>
     )

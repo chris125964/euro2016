@@ -10,8 +10,7 @@ class User extends React.Component {
       <div>
         <ul>
           {_.map(constants.users,
-        (user, index) =>
-              <li key={index}>{user.name}</li>
+        (user, index) => <li key={index}>{user.name}</li>
       )}
         </ul>
        </div>

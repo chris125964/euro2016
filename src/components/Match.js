@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Image, Input, Row } from 'react-bootstrap';
+//import Albanien from '../pics/Albanien.gif';
 
 class Match extends React.Component {
 
@@ -28,24 +29,30 @@ class Match extends React.Component {
   }
 
   render() {
-    let pic1 = this.props.team1 + '.gif';
+    let pic1 = <Image src={"./pics/" + this.props.team1 + ".gif"} responsive />;
     return (
       <Row>
           <Col md={1}>
             {this.props.nr}
           </Col>
+          <Col md={1}>
+            <Image src={"./pics/" + this.props.team1 + ".gif"} circle responsive />
+          </Col>
           <Col md={3}>
-            <Input type="text" bsSize="small" value={this.props.team1} disabled />
+            <Input type="text" bsSize="small" value={this.props.team1} disabled/>
+          </Col>
+          <Col md={1}>
+            <Input type="text" value={this.state.value1} ref="input1" onChange={this.handleChange1.bind(this)} />
+          </Col>
+          <Col md={1}>-</Col>
+          <Col md={1}>
+            <Input type="text" value={this.state.value2} ref="input2" onChange={this.handleChange2.bind(this)}/>
           </Col>
           <Col md={3}>
             <Input type="text" bsSize="small" value={this.props.team2} disabled />
           </Col>
-          <Col md={2}>
-            <Input type="text" value={this.state.value1} ref="input1" onChange={this.handleChange1.bind(this)} />
-          </Col>
-          <Col md={1}>-</Col>
-          <Col md={2}>
-            <Input type="text" value={this.state.value2} ref="input2" onChange={this.handleChange2.bind(this)}/>
+          <Col md={1}>
+          <Image src={"./pics/" + this.props.team2 + ".gif"} responsive />
           </Col>
         </Row>
       );

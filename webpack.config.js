@@ -8,10 +8,19 @@ module.exports = {
 	],
 	module: {
 		loaders: [{
-			test: /\.(js|gif)?$/,
+			test: /\.js?$/,
 			exclude: /node_modules/,
 			loader: 'react-hot!babel'
-		}]
+		},
+		{
+			test: /\.(gif)$/,
+			loader: 'url-loader?limit=8192'
+		},
+		{
+			test: /\.(css)$/,
+			loader: 'style!css'
+		}
+		]
 	},
 	resolve: {
 		extensions: ['', '.js']

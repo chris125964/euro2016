@@ -6,12 +6,12 @@ import Match from '../components/Match';
 import Matches from '../components/Matches';
 import MatchTabelle from '../components/MatchTabelle';
 
-class Tables extends React.Component {
+export default React.createClass ({
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      groups: _.extend({}, constants.groups),
+  getInitialState() {
+    const gruppen = _.extend({}, constants.groups);
+    return({
+      groups: gruppen,
       games: [{
         team1: 0,
         team2: 1,
@@ -43,8 +43,8 @@ class Tables extends React.Component {
         tore1: '',
         tore2: ''
       }]
-    };
-  }
+    });
+  },
 
   onChangeMatch(group, nr, team1, value1, team2, value2) {
     let groups = _.extend({}, this.state.groups);
@@ -85,8 +85,8 @@ class Tables extends React.Component {
     this.setState({
       groups
     });
-  //  console.log('onChangeMatch # team1: ' + team1 + ' -> ' + JSON.stringify(this.state.groups[0]., null, 4));
-  }
+    //  console.log('onChangeMatch # team1: ' + team1 + ' -> ' + JSON.stringify(this.state.groups[0]., null, 4));
+  },
 
   render() {
     return (
@@ -106,5 +106,4 @@ class Tables extends React.Component {
       </Row>
     )
   }
-}
-export default Tables;
+})

@@ -10,7 +10,7 @@ module.exports = {
 		loaders: [{
 			test: /\.js?$/,
 			exclude: /node_modules/,
-			loader: 'react-hot!babel'
+			loader: 'babel-loader?presets[]=react,presets[]=es2015'
 		},
 		{
 			test: /\.(gif)$/,

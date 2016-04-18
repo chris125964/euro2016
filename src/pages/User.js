@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import constants from '../constants';
 
-class User extends React.Component {
+export default React.createClass ({
 
   render() {
 
@@ -16,5 +16,4 @@ class User extends React.Component {
        </div>
       );
   }
-}
-export default User;
+})

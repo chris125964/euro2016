@@ -5,8 +5,7 @@ import constants from '../constants';
 import { Col, Panel, Row, Table, Tabs, Tab } from 'react-bootstrap';
 
 
-class List extends React.Component {
-
+export default React.createClass ({
 
   render() {
     return (
@@ -19,5 +18,4 @@ class List extends React.Component {
        </div>
       );
   }
-}
-export default List;
+})

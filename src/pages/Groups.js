@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import constants from '../constants';
 
-class Groups extends React.Component {
+export default React.createClass ({
 
   render() {
     return (
@@ -21,5 +21,4 @@ class Groups extends React.Component {
        </div>
       );
   }
-}
-export default Groups;
+})

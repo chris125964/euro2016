@@ -10,15 +10,14 @@ import Login from './pages/Login';
 
 
 const routes = (
-  <Router history={browserHistory}>
-<Route path="/" component={ App } >
+    <Route path="/" component={ App } >
         <IndexRoute component={ Login } />
-        <Route path="/list" component={List} />
+        <Route path="/list" component={List} name="list"/>
         <Route path="/groups" component={Groups} />
         <Route path="/user" component={User} />
         <Route path="/tables" component={Tables} />
-      </Route>
-      </Router>
+        <Route path="/login" component={Login} />
+    </Route>
 );
 
 export default routes;

@@ -94,7 +94,7 @@ export default React.createClass ({
         <Tabs defaultActiveKey={1}>
           { _.map(constants.groups, (group, index) => <Tab eventKey={index} title={'Gruppe ' + group.nummer} key={index}>
                 <Col md={7}>
-                <Matches group={index} teams={this.state.groups[index].teams} onChange={this.onChangeMatch.bind(this)}/>
+                <Matches group={index} teams={this.state.groups[index].teams} onChange={this.onChangeMatch}/>
                 </Col>
                 <Col md={5}>
                   <MatchTabelle teams={this.state.groups[index].teams}/>
